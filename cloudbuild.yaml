@@ -2,8 +2,9 @@ steps:
   - id: "Rodando Test Unitario"
     name: "gcr.io/cloud-builders/go:alpine"
     args: ["test", "soma/Test"]
-    env: ["PROJECT_ROOT=soma"]
+    env: ["PROJECT_ROOT=soma", "GOPATH=/go/src"]
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '--tag=gcr.io/$PROJECT_ID/soma', '.']
+    env: ["PROJECT_ROOT=soma", "GOPATH=/go/src"]
 images: ["gcr.io/$PROJECT_ID/soma"]
   
