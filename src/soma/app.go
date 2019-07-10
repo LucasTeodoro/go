@@ -7,5 +7,5 @@ import (
 
 func main() {
 	result := functions.Soma(5,5)
-	fmt.Println("Total:", result)
+	fmt.Println("O Total é:", result)
 }
